@@ -4,13 +4,10 @@
 }
 
 #menu {
-    background-color: #D84282;
     position: relative;
-    width: var(--menu-bar-width);
-    height: var(--menu-bar-height);
-    margin: 100px;
 }
 
+#menu,
 #menu::before,
 #menu::after {
     background-color: #D84282;
@@ -19,16 +16,37 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    left: 1fr;
+    transition: all 0.35s ease-in-out;
 }
 
 #menu::before {
-    left: 0;
     top: -20px;
 }
 
 #menu::after {
-    left: 0;
     top: 20px;
 }
 
+.container:hover #menu {
+    background-color: white;
+}
+
+.container:hover #menu::after,
+.container:hover #menu::before {
+    top: 0;
+}
+.container:hover #menu::after {
+    transform: rotate(-45deg);
+}
+
+.container:hover #menu::before {
+    transform: rotate(45deg);
+}
+
+.container{
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    padding: 30px;
+}
 
